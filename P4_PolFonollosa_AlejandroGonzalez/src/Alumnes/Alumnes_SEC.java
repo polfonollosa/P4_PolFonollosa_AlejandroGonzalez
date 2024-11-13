@@ -77,7 +77,7 @@ public class Alumnes_SEC implements Comparable<Alumnes_SEC> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Alumne: ").append(this.cap.info.toString()).append("\n");
+        sb.append(this.cap.info.toString()).append("\n");
         Node aux = this.cap.next;
         while (aux != null) {
             sb.append(aux.info.toString()).append("\n");

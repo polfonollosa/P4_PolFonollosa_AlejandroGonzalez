@@ -68,12 +68,15 @@ public class Beca {
                     }
                     break;
                 case "3":
+                    System.out.println("Llista d'alumnes amb descendent:");
                     System.out.println(beca);
                     break;
                 case "4":
                     beca.esborrarAlumnesSenseMatricula();
+                    System.out.println("Alumnes sense una matricula d'honor esborrats");
                     break;
                 case "5":
+                    System.out.println("Sortint...");
                     sortir = true;
                     break;
                 default:
