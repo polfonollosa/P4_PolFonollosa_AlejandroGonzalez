@@ -165,20 +165,25 @@ public class Beca {
         boolean estat = true;
 
         while (estat) {
-            System.out.print("Introdueix el nom de l'assignatura o 'fi' per acabar: ");
-            String nomAssignatura = scanner.nextLine();
-            if (nomAssignatura.equals("fi")) {
-                break;
-            }
-            System.out.print("Introdueix el nombre de crèdits: ");
-            int credits = Integer.parseInt(scanner.nextLine());
-            System.out.print("És obligatòria (true/false): ");
-            boolean mHonor = Boolean.parseBoolean(scanner.nextLine());
-            System.out.print("Introdueix la nota: ");
-            double nota = Double.parseDouble(scanner.nextLine());
+            try {
+                System.out.print("Introdueix el nom de l'assignatura o 'fi' per acabar: ");
+                String nomAssignatura = scanner.nextLine();
+                if (nomAssignatura.equals("fi")) {
+                    break;
+                }
+                System.out.print("Introdueix el nombre de crèdits: ");
+                int credits = Integer.parseInt(scanner.nextLine());
+                System.out.print("És obligatòria (true/false): ");
+                boolean mHonor = Boolean.parseBoolean(scanner.nextLine());
+                System.out.print("Introdueix la nota: ");
+                double nota = Double.parseDouble(scanner.nextLine());
 
-            Assignatura assignatura = new Assignatura(nomAssignatura, credits, mHonor, nota);
-            nouAlumne.addAssignatura(assignatura);
+                Assignatura assignatura = new Assignatura(nomAssignatura, credits, mHonor, nota);
+                nouAlumne.addAssignatura(assignatura);
+            } catch (NumberFormatException e) {
+                System.err.println("Error en el format dels valors introduïts. Torna a intentar-ho.");
+                return; // Tornar al menú principal
+            }
         }
 
         this.arbreACB.inserir(nouAlumne);
