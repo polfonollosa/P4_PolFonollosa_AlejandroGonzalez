@@ -1,6 +1,6 @@
 package Alumnes;
 
-public class Assignatura {
+public class  Assignatura {
 
     private boolean mHonor;
     private double nota;
